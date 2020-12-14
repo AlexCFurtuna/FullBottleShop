@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_custom_custom_fields",
+  "info": {
+    "name": "customFields",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "options": {
+      "type": "string"
+    }
+  }
+}
