@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div>
     <Header />
     <div class="main uk-flex uk-flex-center">
       <div class="left">
@@ -8,7 +8,6 @@
             <span uk-search-icon></span>
             <input
               class="uk-search-input"
-              v-model="query"
               type="search"
               placeholder="Search..."
             />
@@ -25,13 +24,13 @@
       </div>
       <div class="center">
         <div class="beers">
-          <div class="beer" v-for="beer in filteredList" v-bind:key="beer.id">
+          <div class="beer" v-for="beer in beers" :key="beer.id">
             <nuxt-link :to="`/beer/${beer.id}`" style="text-decoration: none">
               <div class="uk-card beer-img">
                 <h4 class="uk-margin-top">
                   {{ beer.name }} {{ beer.abv + "%" }}
                 </h4>
-                <img :src="getImageUrl(beer.image.url)" alt="image" />
+                <!-- <img :src="getImageUrl(beer.image.url)" alt="image" /> -->
               </div>
 
               <div class="uk-card beer-info margin">
@@ -46,22 +45,21 @@
               </div>
             </nuxt-link>
             <button
-              class="snipcart-add-item uk-button uk-button-secondary"
+              @click="addToCart"
+              class="uk-button uk-button-secondary"
               :data-item-id="beer.id"
               :data-item-name="beer.name"
               :data-item-price="beer.price"
               :data-item-description="beer.description"
-              :data-item-image="getImageUrl(beer.image.url)"
-              :data-item-url="$route.fullPath"
             >
               Add to cart
             </button>
           </div>
         </div>
       </div>
-      <!-- <div class="uk-width-expand@m right">
+      <div class="uk-width-expand@m right">
         <Cart />
-      </div> -->
+      </div>
       <div
         class="uk-container uk-container-center uk-text-center"
         v-if="beers.length == 0"
@@ -79,65 +77,64 @@
 
 <script>
 // Import the restaurants query
-import beersQuery from "~/apollo/queries/beer/beers";
-// import { mapMutations } from "vuex";
+// import beersQuery from "~/apollo/queries/beer/beers";
+import { mapMutations, mapState, mapActions } from "vuex";
+
 export default {
   data() {
-    return {
-      // Initialize an empty restaurants variable
-      beers: [],
-      query: "",
-    };
-  },
-  apollo: {
-    beers: {
-      prefetch: true,
-      query: beersQuery,
-      variables() {
-        return { id: parseInt(this.$route.params.id) };
-      },
-    },
-  },
-  computed: {
-    filteredList() {
-      return this.beers.filter((beer) => {
-        return beer.name.toLowerCase().includes(this.query.toLowerCase());
-      });
-    },
+    return {};
   },
   methods: {
+    getBeers() {
+      this.$store.commit("SET_BEERS");
+    },
     getImageUrl(relativeUrl) {
       return `${"http://localhost:1337"}${relativeUrl}`;
     },
-    // ...mapMutations({
-    //   addToCart: "cart/add",
-    //   removeFromCart: "cart/remove",
-    // }),
+    ...mapMutations({
+      addToCart: "cart/add",
+      removeFromCart: "cart/remove",
+    }),
+  },
+  computed: {
+    beers() {
+      return this.$store.state.beers;
+    },
   },
 };
 </script>
 <style scoped>
-.background {
-}
 .beers {
-  margin: 0 0 100px 0;
+  margin: 0;
   text-align: center;
 }
 .center {
+  width: 45vw;
   margin-top: 50px;
 }
 .left {
-  margin: 25px 50px 0 25px;
+  width: 25vw;
+  margin: 100px 50px 0 25px;
+}
+.right {
+  width: 10vw;
 }
 .beer {
-  width: 20%;
+  width: 15%;
   display: inline-block;
-  margin: 25px;
-  border-radius: 5px;
-  padding-bottom: 20px;
-  box-shadow: -3px 3px 6px #d99b2b, 3px -3px 6px #ffd13a;
+  margin: 0 25px;
 }
-.beer img {
-  max-height: 200px;
+.filters {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 100px;
+  min-height: 250px;
+  border: 1px solid black;
+}
+.filter-list {
+  list-style: none;
+}
+.filter-list li {
+  font-size: 1.2rem;
 }
 </style>

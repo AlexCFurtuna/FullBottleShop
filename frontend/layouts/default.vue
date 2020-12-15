@@ -22,17 +22,11 @@ export default {
 </script>
 <style>
 .main {
-  min-height: 90vh;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #ffffff, #dedede);
 }
-a,
-button {
-  transition: 0.5s !important;
-}
-a:hover,
-button:hover {
-  color: white !important;
-  background: rgba(265, 182, 50) !important;
-  border: 1px solid black;
+.box-shadow {
+  box-shadow: 4px 4px 8px #afbbc1, -4px -4px 8px #edfdff;
 }
 </style>
 
