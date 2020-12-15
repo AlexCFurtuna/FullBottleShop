@@ -41,7 +41,7 @@
                   >
                     ---</span
                   >
-                  {{ beer.price }} RON
+                  {{ beer.price }} $
                 </h4>
               </div>
             </nuxt-link>
@@ -135,7 +135,7 @@ export default {
   margin: 25px;
   border-radius: 5px;
   padding-bottom: 20px;
-  box-shadow: -3px 3px 6px #d99b2b, 3px -3px 6px #ffd13a;
+  box-shadow: 3px 3px 6px #afbbc1, -3px -3px 6px #edfdff;
 }
 .beer img {
   max-height: 200px;

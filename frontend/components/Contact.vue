@@ -12,7 +12,9 @@
         <input class="uk-button uk-button-secondary" type="submit" value="Hit us up!"></input>
       </form>
       </div>
-      <div class="center"></div>
+      <div class="center">
+        <img src="~assets/contact.jpg" alt="">
+      </div>
       <div class="right">
         <p class="text">
           Make sure you keep an eye on our socials for news and #everythingBeer
@@ -39,13 +41,20 @@ export default {};
 .right {
   width: 30%;
 }
-.center {
+img {
+  margin-top: 50px;
+  height: 90vh;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #dcebf3, #b9c6cc);
+  box-shadow: 5px 5px 10px #afbbc1, -5px -5px 10px #edfdff;
+}
+/* .center {
   width: 40%;
   background: url("~assets/contact.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
+} */
 form {
   width: 70%;
   margin: 25px auto;

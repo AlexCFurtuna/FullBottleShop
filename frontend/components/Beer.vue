@@ -1,11 +1,6 @@
 <template>
   <div class="main">
     <Header />
-    <a
-      class="pos-absolute uk-button uk-button-secondary uk-margin"
-      @click="$router.go(-1)"
-      ><span uk-icon="arrow-left"></span> go back</a
-    >
     <div class="beer" v-if="this.beer !== null">
       <div class="left">
         <div class="beer-left">
@@ -16,13 +11,13 @@
         <div class="beer-right">
           <h2>{{ beer.name + " , " + beer.abv + " %" }}</h2>
           <h1>
-            {{ beer.price + " RON" }} <span>{{ beer.size + " ml" }}</span>
+            {{ beer.price + " $" }} <span>{{ beer.size + " ml" }}</span>
           </h1>
 
           <h3>{{ beer.brewery }}</h3>
           <h3>Description: {{ beer.description }}</h3>
           <button
-            class="snipcart-add-item uk-button uk-button-secondary box-shadow"
+            class="snipcart-add-item uk-button uk-button-secondary"
             :data-item-id="beer.id"
             :data-item-name="beer.name"
             :data-item-price="beer.price"
@@ -34,9 +29,6 @@
           </button>
         </div>
       </div>
-      <!-- <div class="uk-width-expand@m right">
-        <Cart />
-      </div> -->
     </div>
     <div v-else>
       <h1>page not found</h1>
@@ -66,36 +58,10 @@ export default {
     getImageUrl(relativeUrl) {
       return `${"http://localhost:1337"}${relativeUrl}`;
     },
-    // ...mapMutations({
-    //   addToCart: "cart/add",
-    //   removeFromCart: "cart/remove",
-    // }),
   },
-  // computed: {
-  //   customeFields() {
-  //     return this.beer["customFields"]
-  //       .map(({ name, required, options }) => ({
-  //         name,
-  //         required,
-  //         options,
-  //       }))
-  //       .map((x, index) =>
-  //         Object.entries(x).map(([key, value]) => ({
-  //           [`data-item-custom${
-  //             index + 1
-  //           }-${key.toString().toLowerCase()}`]: value,
-  //         }))
-  //       )
-  //       .reduce((acc, curr) => acc.concat(curr), [])
-  //       .reduce((acc, curr) => ({ ...acc, ...curr }));
-  //   },
-  // },
 };
 </script>
 <style scoped>
-.main {
-  text-align: center;
-}
 .beer {
   display: flex;
   flex-direction: row;
@@ -107,10 +73,21 @@ export default {
 }
 .beer-left {
   width: 100%;
-  text-align: right;
+  text-align: center;
+}
+img {
+  padding: 40px;
+  box-shadow: 5px 5px 10px #afbbc1, -5px -5px 10px #edfdff;
 }
 .pos-absolute {
   position: absolute;
   left: 0;
+}
+button {
+  transition: 0.3s;
+}
+button:hover {
+  box-shadow: 5px 5px 10px #afbbc1, -5px -5px 10px #edfdff;
+  background: rgba(265, 182, 50);
 }
 </style>

@@ -42,7 +42,7 @@ img {
   height: 90vh;
   border-radius: 5px;
   background: linear-gradient(145deg, #dcebf3, #b9c6cc);
-  box-shadow: 10px 10px 20px #afbbc1, -10px -10px 20px #edfdff;
+  box-shadow: 5px 5px 10px #afbbc1, -5px -5px 10px #edfdff;
 }
 .right {
   text-align: center;
