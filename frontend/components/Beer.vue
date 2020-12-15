@@ -77,7 +77,7 @@ export default {
 }
 img {
   padding: 40px;
-  box-shadow: 5px 5px 10px #afbbc1, -5px -5px 10px #edfdff;
+  box-shadow: 3px 3px 6px #afbbc1, -3px -3px 6px #edfdff;
 }
 .pos-absolute {
   position: absolute;

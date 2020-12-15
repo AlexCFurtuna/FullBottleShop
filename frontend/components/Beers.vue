@@ -117,8 +117,6 @@ export default {
 };
 </script>
 <style scoped>
-.background {
-}
 .beers {
   margin: 0 0 100px 0;
   text-align: center;
@@ -130,14 +128,17 @@ export default {
   margin: 25px 50px 0 25px;
 }
 .beer {
-  width: 20%;
+  width: 15%;
   display: inline-block;
   margin: 25px;
   border-radius: 5px;
-  padding-bottom: 20px;
+  padding: 15px 15px 25px 0;
   box-shadow: 3px 3px 6px #afbbc1, -3px -3px 6px #edfdff;
 }
 .beer img {
-  max-height: 200px;
+  height: 175px;
+}
+h4 {
+  padding: 5px 10px;
 }
 </style>
