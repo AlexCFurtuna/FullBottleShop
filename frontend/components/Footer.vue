@@ -1,7 +1,7 @@
 <template>
   <div>
     <footer>
-      <p>&copy; 2020 alex furtuna</p>
+      <p>&copy; 2020 BottleShop</p>
     </footer>
   </div>
 </template>
@@ -9,7 +9,7 @@
 footer {
   width: 100%;
   height: 50px;
-  position: relative;
+  position: sticky;
   bottom: 0;
   color: white;
   background: black;

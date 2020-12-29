@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <Header />
+    <Navbar />
     <div class="main uk-flex uk-flex-center">
       <div class="left">
         <div class="uk-margin-top filters">
@@ -13,14 +13,6 @@
               placeholder="Search..."
             />
           </form>
-          <!-- <h2 class="uk-margin-top">Beer Filter</h2>
-          <ul class="filter-list">
-            <li class="">Lager</li>
-            <li>Pale Ale</li>
-            <li>IPA</li>
-            <li>Sour Beer</li>
-            <li>Stout</li>
-          </ul> -->
         </div>
       </div>
       <div class="center">
@@ -59,9 +51,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="uk-width-expand@m right">
-        <Cart />
-      </div> -->
       <div
         class="uk-container uk-container-center uk-text-center"
         v-if="beers.length == 0"
@@ -128,17 +117,41 @@ export default {
   margin: 25px 50px 0 25px;
 }
 .beer {
-  width: 15%;
+  max-width: 15%;
   display: inline-block;
   margin: 25px;
   border-radius: 5px;
   padding: 15px 15px 25px 0;
-  box-shadow: 3px 3px 6px #afbbc1, -3px -3px 6px #edfdff;
+  /* box-shadow: 3px 3px 6px #afbbc1, -3px -3px 6px #edfdff; */
 }
-.beer img {
-  height: 175px;
-}
+/* .beer img {
+  max-height: 175px;
+} */
 h4 {
   padding: 5px 10px;
+}
+button {
+  font-size: 0.8rem;
+  transition: 0.3s;
+  color: white;
+  background: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+button:hover {
+  background: rgba(265, 182, 50);
+  box-shadow: 4px 4px 8px #afbbc1, -4px -4px 8px #edfdff;
+}
+
+@media screen and (max-width: 1000px) {
+  .beer {
+    min-width: 25%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .beer {
+    min-width: 50%;
+  }
 }
 </style>

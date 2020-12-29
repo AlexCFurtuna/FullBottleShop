@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <Header />
+    <Navbar />
     <div class="beer" v-if="this.beer !== null">
       <div class="left">
         <div class="beer-left">
@@ -17,7 +17,7 @@
           <h3>{{ beer.brewery }}</h3>
           <h3>Description: {{ beer.description }}</h3>
           <button
-            class="snipcart-add-item uk-button uk-button-secondary"
+            class="snipcart-add-item uk-button uk-button-secondary buttons"
             :data-item-id="beer.id"
             :data-item-name="beer.name"
             :data-item-price="beer.price"
@@ -78,16 +78,5 @@ export default {
 img {
   padding: 40px;
   box-shadow: 3px 3px 6px #afbbc1, -3px -3px 6px #edfdff;
-}
-.pos-absolute {
-  position: absolute;
-  left: 0;
-}
-button {
-  transition: 0.3s;
-}
-button:hover {
-  box-shadow: 5px 5px 10px #afbbc1, -5px -5px 10px #edfdff;
-  background: rgba(265, 182, 50);
 }
 </style>

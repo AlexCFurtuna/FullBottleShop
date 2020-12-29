@@ -1,16 +1,21 @@
-import cookieparser from "cookieparser";
+export const getters = {
+    isAuthenticated(state) {
+        return state.auth.loggedIn;
+    },
 
-export const actions = {
-  nuxtServerInit({ commit }, { req }) {
-    let beers = [];
-    let user = null;
-    let cart = [];
-    if (req && req.headers && req.headers.cookie) {
-      const parsed = cookieparser.parse(req.headers.cookie);
-      user = (parsed.user && JSON.parse(parsed.user)) || null;
-      // cart = (parsed.cart && JSON.parse(parsed.cart)) || [];
+    loggedInUser(state) {
+        return state.auth.user;
     }
-    commit("auth/setUser", user);
-    // commit("cart/setItems", cart);
-  }
 };
+// import cookieparser from "cookieparser";
+
+// export const actions = {
+//   nuxtServerInit({ commit }, { req }) {
+//     let user = null;
+//     if (req && req.headers && req.headers.cookie) {
+//       const parsed = cookieparser.parse(req.headers.cookie);
+//       user = (parsed.user && JSON.parse(parsed.user)) || null;
+//     }
+//     commit("auth/setUser", user);
+//   }
+// };

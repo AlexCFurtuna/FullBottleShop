@@ -1,44 +1,44 @@
 <template>
   <section>
-    <Header />
+    <Navbar />
     <div class="uk-flex uk-flex-center main">
       <div class="overlay">
         <div class="center text">
           <p>
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
-            <a class="uk-button uk-button-secondary" href="/beer">
+            <a class="uk-button uk-button-secondary buttons" href="/beer">
               beer me now!</a
             >
           </p>
@@ -73,17 +73,6 @@ p {
   border-radius: 5px;
 }
 a {
-  font-size: 2rem;
-  padding: 10px 30px;
-  color: white;
-  background: black;
-  text-decoration: none;
-  transition: 0.3s;
   margin: 5px;
-  border-radius: 5px;
-}
-a:hover {
-  color: white;
-  background: rgba(265, 182, 50);
 }
 </style>

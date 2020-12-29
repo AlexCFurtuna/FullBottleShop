@@ -1,19 +1,43 @@
 <template>
   <section>
-     <Header />
+    <Navbar />
     <div class="uk-flex uk-flex-center main">
       <div class="left">
-        <form data-aos="fade-right" data-aos-delay="300" action="https://formspree.io/mjvolykr" method="POST">
-        <p class="text">Get in touch with us directly!</p>
-        <input type="text" name="firstname" id="fname" placeholder="Your first name ..">
-        <input type="text" name="lname" id="lname" placeholder="Your last name ..">
-        <label><input id="mail" placeholder="Your email address .." type="text" name="_replyto"></label>
-        <textarea name="subject" id="subject" placeholder="Write something .."></textarea>
-        <input class="uk-button uk-button-secondary" type="submit" value="Hit us up!"></input>
-      </form>
+        <form action="https://formspree.io/mjvolykr" method="POST">
+          <p class="text">Get in touch with us directly!</p>
+          <input
+            type="text"
+            name="firstname"
+            id="fname"
+            placeholder="Your first name .."
+          />
+          <input
+            type="text"
+            name="lname"
+            id="lname"
+            placeholder="Your last name .."
+          />
+          <label
+            ><input
+              id="mail"
+              placeholder="Your email address .."
+              type="text"
+              name="_replyto"
+          /></label>
+          <textarea
+            name="subject"
+            id="subject"
+            placeholder="Write something .."
+          ></textarea>
+          <input
+            class="uk-button uk-button-secondary buttons"
+            type="submit"
+            value="Hit us up!"
+          />
+        </form>
       </div>
       <div class="center">
-        <img src="~assets/contact.jpg" alt="">
+        <img src="~assets/contact.jpg" alt=""  class="img"/>
       </div>
       <div class="right">
         <p class="text">
@@ -22,10 +46,10 @@
         <div class="socials">
           <ul class="socials-list">
             <li class="socials-item">
-              <a href="">Instagram</a>
+              <a class="buttons" href="">Instagram</a>
             </li>
             <li class="socials-item">
-              <a href="">Facebook</a>
+              <a class="buttons" href="">Facebook</a>
             </li>
           </ul>
         </div>
@@ -41,20 +65,8 @@ export default {};
 .right {
   width: 30%;
 }
-img {
-  margin-top: 50px;
-  height: 90vh;
-  border-radius: 5px;
-  background: linear-gradient(145deg, #dcebf3, #b9c6cc);
-  box-shadow: 5px 5px 10px #afbbc1, -5px -5px 10px #edfdff;
-}
-/* .center {
-  width: 40%;
-  background: url("~assets/contact.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-} */
+
+
 form {
   width: 70%;
   margin: 25px auto;
@@ -118,22 +130,6 @@ input.uk-button {
   border-radius: 5px;
   transition: 0.3s;
 }
-a {
-  font-size: 2rem;
-  padding: 10px 30px;
-  background: black;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-  border-radius: 5px;
-}
-a:hover,
-input.uk-button:hover {
-  color: white;
-  background: rgba(265, 182, 50);
-  border-radius: 5px;
-  box-shadow: 4px 4px 8px #afbbc1, -4px -4px 8px #edfdff;
-}
 ul {
   margin: 0 auto;
 }
@@ -142,5 +138,12 @@ li {
   color: white;
   font-size: 1.3rem;
   margin: 25px 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.socials {
+  margin-left: 50px;
 }
 </style>

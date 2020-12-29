@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Header />
+    <Navbar />
     <section>
       <div class="uk-flex uk-flex-center main">
         <div class="left">
-          <img src="~assets/about.jpg" alt="" />
+          <img src="~assets/about.jpg" alt="" class="img" />
         </div>
         <div class="right">
           <p class="text">
@@ -21,7 +21,10 @@
             selection of organic and non-organic Ales , larger,ciders and beers
             from micro breweries
           </p>
-          <a class="uk-button uk-button-secondary box-shadow" href="/beer">
+          <a
+            class="uk-button uk-button-secondary box-shadow buttons"
+            href="/beer"
+          >
             beer me
           </a>
         </div>
@@ -37,23 +40,15 @@
 .left {
   text-align: center;
 }
-img {
-  margin-top: 50px;
-  height: 90vh;
-  border-radius: 5px;
-  background: linear-gradient(145deg, #dcebf3, #b9c6cc);
-  box-shadow: 5px 5px 10px #afbbc1, -5px -5px 10px #edfdff;
-}
-.right {
+/* .right {
   text-align: center;
-}
+} */
 p {
   font-size: 1.6rem;
-  width: 70%;
-  margin: 25px auto;
-  padding: 75px 0;
+  width: 90%;
+  margin: 250px 0 50px 0;
 }
-a {
+/* a {
   font-size: 2rem;
   padding: 10px 30px;
   transition: 0.3s;
@@ -66,5 +61,5 @@ a:hover {
   color: white;
   background: rgba(265, 182, 50);
   box-shadow: 4px 4px 8px #afbbc1, -4px -4px 8px #edfdff;
-}
+} */
 </style>

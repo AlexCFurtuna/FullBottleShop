@@ -3,7 +3,7 @@
     <div class="center uk-width-1-2">
       <h1>
         Welcome to BottleShop. Before you can go pick your favourite beer please
-        confirm you'ar above 18! <br />
+        confirm you are above 18! <br />
         <br />
         See you on the other side!
       </h1>
@@ -11,7 +11,7 @@
       <br />
       <router-link
         tag="a"
-        class="navbar-brand uk-button uk-button-secondary"
+        class="navbar-brand uk-button uk-button-secondary buttons"
         to="/home"
         exact
         >I'm over 18!</router-link
