@@ -79,4 +79,33 @@ img {
   padding: 40px;
   box-shadow: 3px 3px 6px #afbbc1, -3px -3px 6px #edfdff;
 }
+@media screen and (max-width: 768px) {
+  .left,
+  .right {
+    text-align: center;
+    width: 80vw;
+    margin: 0 auto;
+  }
+  .beer-left {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    padding: 25px;
+    box-shadow: none;
+  }
+  .beer {
+    display: block;
+    margin: 0 0 100px 0;
+  }
+  .beer h1 {
+    font-size: 1rem;
+  }
+  .beer h2 {
+    font-size: 1.5rem;
+  }
+  .beer h3 {
+    font-size: 1.2rem;
+  }
+}
 </style>

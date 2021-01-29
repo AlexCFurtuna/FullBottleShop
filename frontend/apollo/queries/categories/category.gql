@@ -1,0 +1,8 @@
+query Categories($id: ID!) {
+    category(id: $id) {
+        name
+        beers {
+            name
+        }
+    }
+}

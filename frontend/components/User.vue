@@ -32,14 +32,11 @@
             <input type="text" :value="loggedInUser.email" />
             <br />
           </form>
-          <button class="uk-button uk-button-secondary buttons" type="submit">
-            update details
-          </button>
         </div>
       </div>
-      <div class="right">
+      <!-- <div class="right">
         <img src="~assets/user-two.jpg" alt="" class="img" />
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
@@ -49,46 +46,12 @@ export default {
   computed: {
     ...mapGetters(["isAuthenticated", "loggedInUser"]),
   },
-  // computed: {
-  //   // Set your username thanks to your getter
-  //   username() {
-  //     return this.$store.getters["auth/username"];
-  //   },
-  //   firstName() {
-  //     return this.$store.getters["auth/firstName"];
-  //   },
-  //   lastName() {
-  //     return this.$store.getters["auth/lastName"];
-  //   },
-  //   address() {
-  //     return this.$store.getters["auth/address"];
-  //   },
-  //   email() {
-  //     return this.$store.getters["auth/email"];
-  //   },
-  //   city() {
-  //     return this.$store.getters["auth/city"];
-  //   },
-  //   country() {
-  //     return this.$store.getters["auth/country"];
-  //   },
-  //   password() {
-  //     return this.$store.getters["auth/password"];
-  //   },
-  // },
 };
 </script>
 <style scoped>
-.right {
-  width: 50%;
-}
-.left {
-  width: 35%;
-  margin-left: 100px;
-}
 .top,
 .form {
-  margin: 50px 0 50px 50px;
+  margin: 50px 0 50px 150px;
 }
 form {
   min-height: 50vh;
@@ -114,9 +77,18 @@ input {
 h3 {
   width: 50%;
 }
-.buttons {
-  font-size: 1rem;
-  padding: 5px 10px !important;
-  margin-bottom: 50px;
+@media screen and (max-width: 1280px) {
+  .left {
+    width: 50%;
+  }
+  p,
+  input,
+  h3 {
+    width: 100%;
+  }
+  .top,
+  .form {
+    margin: 0 auto !important;
+  }
 }
 </style>

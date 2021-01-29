@@ -37,14 +37,14 @@
     "size": {
       "type": "decimal"
     },
-    "categories": {
-      "collection": "category",
-      "via": "beers"
-    },
     "customFields": {
       "type": "component",
       "repeatable": true,
       "component": "custom.custom-fields"
+    },
+    "category": {
+      "model": "category",
+      "via": "beers"
     }
   }
 }

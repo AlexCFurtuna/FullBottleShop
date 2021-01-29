@@ -37,10 +37,11 @@
         </form>
       </div>
       <div class="center">
-        <img src="~assets/contact.jpg" alt=""  class="img"/>
+        <!-- <img src="~assets/contact.jpg" alt="" class="img" /> -->
+        <div class="img"></div>
       </div>
       <div class="right">
-        <p class="text">
+        <p style="text-align: center" class="text">
           Make sure you keep an eye on our socials for news and #everythingBeer
         </p>
         <div class="socials">
@@ -62,10 +63,10 @@ export default {};
 </script>
 <style scoped>
 .left,
+.center,
 .right {
-  width: 30%;
+  width: 33%;
 }
-
 
 form {
   width: 70%;
@@ -88,25 +89,17 @@ form {
   border-bottom: 1px solid black;
   outline: none;
 }
-select,
 textarea {
   border-radius: 0 !important;
   box-shadow: none;
 }
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: black !important;
-  opacity: 1;
-  /* Firefox */
-}
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: black !important;
-}
+::placeholder,
+:-ms-input-placeholder,
 ::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: white;
+  color: black !important;
+  opacity: 0;
 }
+
 input[type="text"],
 select,
 textarea {
@@ -145,5 +138,76 @@ a {
 }
 .socials {
   margin-left: 50px;
+}
+.img {
+  background: url("~assets/contact.jpg") no-repeat center;
+  background-size: cover;
+  min-height: 70vh;
+  border-radius: 5px;
+}
+@media screen and (max-width: 1024px) {
+  .main {
+    background: url("~assets/contact-mid.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  .img {
+    display: none;
+  }
+  .left,
+  .right {
+    width: 50%;
+    height: 50vh;
+  }
+
+  .text {
+    color: white !important;
+    font-weight: 500;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: white !important;
+  }
+  input[type="text"] {
+    color: white !important;
+  }
+  #fname,
+  #lname,
+  #mail,
+  #subject {
+    border-bottom: 1px solid white;
+    color: white;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main {
+    min-height: 100vh;
+    display: block;
+    padding-bottom: 150px;
+  }
+  .left,
+  .right {
+    width: 100%;
+  }
+  .right {
+    margin: 400px auto 0 auto;
+  }
+  form {
+    width: 80%;
+    margin: 0 auto;
+  }
+  p,
+  p.text {
+    font-size: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+  .socials-list {
+    padding: 0;
+  }
+  .socials-item {
+    display: inline-block;
+  }
 }
 </style>

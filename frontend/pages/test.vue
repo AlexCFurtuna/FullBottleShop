@@ -1,110 +1,88 @@
 <template>
   <div>
-    <Header />
-    <div class="main uk-flex uk-flex-center">
-      <div class="left">
-        <div class="uk-margin-top filters">
-          <form class="uk-form uk-margin-top">
-            <span uk-search-icon></span>
-            <input
-              class="uk-search-input"
-              type="search"
-              placeholder="Search..."
-            />
-          </form>
-        </div>
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+          <li>
+            <a href="#modal-full" uk-toggle
+              ><span uk-icon="icon: table"></span
+            ></a>
+          </li>
+          <li>
+            <a href="/">Strapi Blog </a>
+          </li>
+        </ul>
       </div>
-      <div class="center">
-        <div class="beers">
-          <div class="beer" v-for="beer in beers" :key="beer.id">
-            <nuxt-link :to="`/beer/${beer.id}`" style="text-decoration: none">
-              <div class="uk-card beer-img">
-                <h4 class="uk-margin-top">
-                  {{ beer.name }} {{ beer.abv + "%" }}
-                </h4>
-                <!-- <img :src="getImageUrl(beer.image.url)" alt="image" /> -->
-              </div>
 
-              <div class="uk-card beer-info margin">
-                <h4>
-                  PRICE<span
-                    style="text-decoration: line-through; margin: 0 10px"
-                  >
-                    ---</span
-                  >
-                  {{ beer.price }} RON
-                </h4>
-              </div>
-            </nuxt-link>
-            <button
-              class="uk-button uk-button-secondary"
-              :data-item-id="beer.id"
-              :data-item-name="beer.name"
-              :data-item-price="beer.price"
-              :data-item-description="beer.description"
-            >
-              Add to cart
-            </button>
+      <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+          <li v-for="category in categories">
+            <router-link
+              :to="{ name: 'categories-id', params: { id: category.id } }"
+              tag="a"
+              >{{ category.name }}
+            </router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="modal-full" class="uk-modal-full" uk-modal>
+      <div class="uk-modal-dialog">
+        <button
+          class="uk-modal-close-full uk-close-large"
+          type="button"
+          uk-close
+        ></button>
+        <div
+          class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle"
+          uk-grid
+        >
+          <div
+            class="uk-background-cover"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3308&q=80 3308w');
+            "
+            uk-height-viewport
+          ></div>
+          <div class="uk-padding-large">
+            <h1 style="font-family: Staatliches">Strapi blog</h1>
+            <div class="uk-width-1-2@s">
+              <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav>
+                <li v-for="category in categories" :key="category.id">
+                  <router-link
+                    class="uk-modal-close"
+                    :to="{ name: 'categories-id', params: { id: category.id } }"
+                    tag="a"
+                    >{{ category.name }}
+                  </router-link>
+                </li>
+              </ul>
+            </div>
+            <p class="uk-text-light">Built with strapi</p>
           </div>
         </div>
       </div>
     </div>
+
+    <nuxt />
   </div>
 </template>
 
 <script>
-// Import the restaurants query
-// import beersQuery from "~/apollo/queries/beer/beers";
-import { mapMutations, mapState, mapActions } from "vuex";
+import categoriesQuery from "~/apollo/queries/beer/beersCategories";
 
 export default {
   data() {
-    return {};
+    return {
+      categories: [],
+    };
   },
-  methods: {
-    getImageUrl(relativeUrl) {
-      return `${"http://localhost:1337"}${relativeUrl}`;
-    },
-  },
-  computed: {
-    beers() {
-      return this.$store.state.beers;
+  apollo: {
+    categories: {
+      prefetch: true,
+      query: categoriesQuery,
     },
   },
 };
 </script>
-<style scoped>
-.beers {
-  margin: 0;
-  text-align: center;
-}
-.center {
-  width: 45vw;
-  margin-top: 50px;
-}
-.left {
-  width: 25vw;
-  margin: 100px 50px 0 25px;
-}
-.right {
-  width: 10vw;
-}
-.beer {
-  width: 15%;
-  display: inline-block;
-  margin: 0 25px;
-}
-.filters {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 100px;
-  min-height: 250px;
-  border: 1px solid black;
-}
-.filter-list {
-  list-style: none;
-}
-.filter-list li {
-  font-size: 1.2rem;
-}
-</style>

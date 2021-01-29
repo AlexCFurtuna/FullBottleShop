@@ -9,7 +9,7 @@
 footer {
   width: 100%;
   height: 50px;
-  position: sticky;
+  position: relative;
   bottom: 0;
   color: white;
   background: black;

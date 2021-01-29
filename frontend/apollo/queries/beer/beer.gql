@@ -1,18 +1,13 @@
 query Beers($id: ID!) {
-  beer(id: $id) {
-    id
-    name
-    description
-    abv
-    price
-    size
-    image {
-      url
+    beer(id: $id) {
+        id
+        name
+        description
+        abv
+        price
+        size
+        image {
+            url
+        }
     }
-    customFields {
-      name
-      options
-      required
-    }
-  }
 }

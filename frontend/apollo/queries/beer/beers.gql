@@ -1,16 +1,16 @@
 query Beers {
-  beers {
-    id
-    name
-    description
-    abv
-    price
-    size
-    image {
-      url
+    beers {
+        id
+        name
+        description
+        abv
+        price
+        size
+        image {
+            url
+        }
+        category {
+            name
+        }
     }
-    categories {
-      name
-    }
-  }
 }

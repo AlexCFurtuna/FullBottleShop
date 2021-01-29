@@ -4,19 +4,11 @@
     <Notification v-if="success" type="success" :message="success" />
     <Notification v-if="error" type="danger" :message="error" />
     <div class="uk-child-width-1-2@m uk-grid">
-      <div>
+      <div class="hidden">
         <!-- // Nice image to make this app more beautiful -->
-        <div class="uk-card uk-card-default uk-card-small uk-card-body">
-          <img
-            src="https://assets-ouch.icons8.com/preview/294/e25a0374-0657-45d5-98d9-2408473a744c.png"
-            height="500"
-            width="500"
-            class="uk-align-center"
-            alt=""
-          />
-        </div>
+        <div class="left"></div>
       </div>
-      <div>
+      <div class="right">
         <div class="uk-card uk-card-default uk-card-large uk-card-body">
           <form v-if="!success" method="post" @submit.prevent="register">
             <fieldset class="uk-fieldset">
@@ -159,6 +151,7 @@ export default {
       error: null,
     };
   },
+
   methods: {
     async register() {
       this.error = null;
@@ -183,3 +176,67 @@ export default {
   },
 };
 </script>
+<style scoped>
+.left {
+  background: url("~assets/contact.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 100vh;
+  padding: 50px;
+}
+
+.right {
+  padding: 0 60px 0 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .left {
+    padding: 0 50px 100px 50px;
+  }
+  div.right div.uk-card.uk-card-default.uk-card-large.uk-card-body {
+    padding: 25px;
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  div .left {
+    display: none;
+  }
+  .hidden {
+    display: none;
+  }
+  div .right {
+    margin: 0 auto;
+    padding: 0;
+    background: url("~assets/contact-mid.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 75vh;
+    padding: 50px;
+    width: 100%;
+  }
+  input,
+  .right div {
+    background: transparent;
+  }
+  .right div {
+    width: 70%;
+    margin: 0 auto;
+  }
+  form,
+  label,
+  input::placeholder {
+    color: white;
+  }
+  input {
+    border-radius: 5px;
+  }
+  label {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+</style>
+ 

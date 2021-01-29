@@ -17,9 +17,8 @@
       "unique": true
     },
     "beers": {
-      "via": "categories",
-      "collection": "beer",
-      "dominant": true
+      "via": "category",
+      "collection": "beer"
     }
   }
 }

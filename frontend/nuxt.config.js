@@ -34,7 +34,11 @@ export default {
     css: ["uikit/dist/css/uikit.min.css", "uikit/dist/css/uikit.css"],
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-    plugins: [{ src: "~/plugins/uikit.js", ssr: false }, "~plugins/axios"],
+    plugins: [
+        { src: "~/plugins/uikit.js", ssr: false },
+        { src: "~plugins/axios" },
+        { src: "~/plugins/joi-validation" }
+    ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
     components: true,
@@ -47,8 +51,12 @@ export default {
         "@nuxtjs/apollo",
         "@nuxtjs/axios",
         "@nuxtjs/auth",
-        "@nuxtjs/dotenv"
+        "@nuxtjs/dotenv",
+        "@nuxtjs/strapi"
     ],
+    strapi: {
+        entities: ["beers"]
+    },
     apollo: {
         clientConfigs: {
             default: {
